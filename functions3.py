@@ -1,15 +1,16 @@
 price = int(input("Please enter the price"))
 
 
-def expensive(number):
+def get_price(number):
+    dis = 0.1
     if number > 1000:
-        dis = int(input("Please enter discount"))
-        return discount(number, dis)
-    return number * 0.9
+        dis = get_discount() / 100
+    return number - number * dis
 
 
-def discount(num, dis):
-    return num * (1 - dis / 100)
+def get_discount():
+    x = float(input("enter discount: "))
+    return x
 
 
-print(expensive(price))
+print(get_price(price))
